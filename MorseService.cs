@@ -65,7 +65,7 @@ namespace MorseApp
             public string TranslateToUkr(string morzeWord)
             {
                 var result = String.Empty;
-                var letters = morzeWord.Split(' ');
+                var letters = morzeWord.Split('/');
                 foreach (var letter in letters)
                 {
                     result += _morzeBook.FirstOrDefault(x => x.Value.Equals(letter)).Key;
@@ -78,7 +78,7 @@ namespace MorseApp
             var letters = ukrWord.ToCharArray();
             foreach (var letter in letters)
             {
-                result += _morzeBook[letter] + " ";
+                result += _morzeBook[letter] + "/";
             }
             return result;
         }
